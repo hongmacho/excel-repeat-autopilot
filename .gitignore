@@ -52,3 +52,11 @@ data.db
 
 # omc
 .omc/
+
+# database
+*.db
+*.sqlite
+*.db-journal
+
+# omc state
+.omc/
