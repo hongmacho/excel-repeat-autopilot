@@ -1,5 +1,4 @@
 import { sqliteTable, text, integer, uniqueIndex } from 'drizzle-orm/sqlite-core'
-import { sql } from 'drizzle-orm'
 
 // 레시피 테이블
 export const recipes = sqliteTable(
