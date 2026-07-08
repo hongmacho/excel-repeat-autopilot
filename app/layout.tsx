@@ -15,7 +15,6 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: 'Excel 반복 자동화 마법사',
   description: '매달 반복되는 Excel 작업을 드래그앤드롭으로 자동화하세요',
-  lang: 'ko',
 }
 
 export default function RootLayout({
