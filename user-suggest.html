@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Excel 반복 자동화 마법사 — 다음 단계 가이드</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
+  <style>
+    :root { color-scheme: light; }
+    :root.dark { color-scheme: dark; }
+  </style>
+</head>
+<body class="bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-50 transition-colors">
+  <div class="min-h-screen">
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-blue-600 to-blue-700 dark:from-blue-900 dark:to-blue-800 text-white p-6 shadow-lg">
+      <div class="max-w-6xl mx-auto">
+        <h1 class="text-4xl font-bold mb-2">🪄 Excel 반복 자동화 마법사</h1>
+        <p class="text-blue-100 text-lg">다음 단계 가이드</p>
+        <div class="mt-4 flex items-center gap-4">
+          <a href="https://github.com/hongmacho/excel-repeat-autopilot" target="_blank" class="text-blue-100 hover:text-white underline flex items-center gap-2">
+            📌 GitHub 저장소
+          </a>
+          <button onclick="toggleTheme()" class="px-4 py-2 rounded-lg bg-blue-500 hover:bg-blue-600 transition-colors">
+            <span class="light-mode">🌙 다크</span>
+            <span class="dark-mode hidden">☀️ 라이트</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl mx-auto p-6 space-y-12">
+      <!-- Section 1: Getting Started -->
+      <section>
+        <h2 class="text-3xl font-bold mb-4 text-blue-600 dark:text-blue-400">1️⃣ 시작하기</h2>
+        <div class="bg-gray-50 dark:bg-gray-900 rounded-lg p-6 space-y-4">
+          <div class="flex items-start gap-4">
+            <input type="checkbox" class="mt-1" disabled>
+            <div>
+              <h3 class="font-semibold text-lg">프로젝트 클론</h3>
+              <p class="text-gray-600 dark:text-gray-400 mt-1">GitHub에서 프로젝트를 다운로드하세요</p>
+              <code class="bg-gray-200 dark:bg-gray-800 px-3 py-1 rounded text-sm mt-2 inline-block">git clone https://github.com/hongmacho/excel-repeat-autopilot</code>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <input type="checkbox" class="mt-1" disabled>
+            <div>
+              <h3 class="font-semibold text-lg">의존성 설치</h3>
+              <p class="text-gray-600 dark:text-gray-400 mt-1">필요한 패키지를 설치합니다</p>
+              <code class="bg-gray-200 dark:bg-gray-800 px-3 py-1 rounded text-sm mt-2 inline-block">npm install</code>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <input type="checkbox" class="mt-1" disabled>
+            <div>
+              <h3 class="font-semibold text-lg">개발 서버 시작</h3>
+              <p class="text-gray-600 dark:text-gray-400 mt-1">로컬에서 애플리케이션을 실행합니다</p>
+              <code class="bg-gray-200 dark:bg-gray-800 px-3 py-1 rounded text-sm mt-2 inline-block">npm run dev</code>
+              <p class="text-gray-600 dark:text-gray-400 mt-2">👉 <code class="bg-gray-200 dark:bg-gray-800 px-2 py-1 rounded">http://localhost:3000</code>에서 접속</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 2: Core Features -->
+      <section>
+        <h2 class="text-3xl font-bold mb-4 text-blue-600 dark:text-blue-400">2️⃣ 핵심 기능</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="bg-blue-50 dark:bg-blue-900/20 border-l-4 border-blue-600 p-6 rounded">
+            <h3 class="font-semibold text-lg mb-2">📁 CSV 업로드</h3>
+            <p class="text-gray-600 dark:text-gray-400">CSV 파일을 드래그앤드롭으로 업로드하고 데이터 미리보기를 확인합니다.</p>
+          </div>
+          <div class="bg-green-50 dark:bg-green-900/20 border-l-4 border-green-600 p-6 rounded">
+            <h3 class="font-semibold text-lg mb-2">🔄 변환 파이프라인</h3>
+            <p class="text-gray-600 dark:text-gray-400">필터, 정렬, 중복 제거, 계산 등 8가지 변환 단계를 순서대로 적용합니다.</p>
+          </div>
+          <div class="bg-purple-50 dark:bg-purple-900/20 border-l-4 border-purple-600 p-6 rounded">
+            <h3 class="font-semibold text-lg mb-2">💾 결과 다운로드</h3>
+            <p class="text-gray-600 dark:text-gray-400">변환된 데이터를 CSV로 다운로드하여 Excel이나 다른 도구에서 사용합니다.</p>
+          </div>
+          <div class="bg-orange-50 dark:bg-orange-900/20 border-l-4 border-orange-600 p-6 rounded">
+            <h3 class="font-semibold text-lg mb-2">📚 템플릿 라이브러리</h3>
+            <p class="text-gray-600 dark:text-gray-400">5개의 미리 만들어진 템플릿 중에서 선택하여 빠르게 시작합니다.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 3: Quick Wins -->
+      <section>
+        <h2 class="text-3xl font-bold mb-4 text-blue-600 dark:text-blue-400">3️⃣ 빠른 개선 (1-2시간)</h2>
+        <div class="space-y-3">
+          <label class="flex items-start gap-4 p-4 bg-gray-50 dark:bg-gray-900 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 cursor-pointer transition-colors">
+            <input type="checkbox" class="mt-1">
+            <div>
+              <p class="font-semibold">📥 샘플 CSV 다운로드</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">각 템플릿에 샘플 데이터 제공 → 사용자가 바로 테스트 가능</p>
+            </div>
+          </label>
+          <label class="flex items-start gap-4 p-4 bg-gray-50 dark:bg-gray-900 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 cursor-pointer transition-colors">
+            <input type="checkbox" class="mt-1">
+            <div>
+              <p class="font-semibold">🎯 드래그앤드롭 순서 변경</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">변환 단계를 드래그로 재배열 → 사용성 대폭 개선</p>
+            </div>
+          </label>
+          <label class="flex items-start gap-4 p-4 bg-gray-50 dark:bg-gray-900 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 cursor-pointer transition-colors">
+            <input type="checkbox" class="mt-1">
+            <div>
+              <p class="font-semibold">⏰ 최근 파일 목록</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">홈에서 최근 실행 파일 표시 → 재사용성 향상</p>
+            </div>
+          </label>
+          <label class="flex items-start gap-4 p-4 bg-gray-50 dark:bg-gray-900 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 cursor-pointer transition-colors">
+            <input type="checkbox" class="mt-1">
+            <div>
+              <p class="font-semibold">📋 클립보드 복사</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">결과 테이블에서 복사 버튼 → Excel에 직접 붙여넣기</p>
+            </div>
+          </label>
+        </div>
+      </section>
+
+      <!-- Section 4: Advanced Features -->
+      <section>
+        <h2 class="text-3xl font-bold mb-4 text-blue-600 dark:text-blue-400">4️⃣ 고급 기능 (4-8시간)</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <label class="flex items-start gap-4 p-4 bg-gray-50 dark:bg-gray-900 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 cursor-pointer transition-colors border-2 border-transparent hover:border-blue-400">
+            <input type="checkbox" class="mt-1">
+            <div>
+              <p class="font-semibold">🔔 스케줄 자동화</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">매주/매월 특정 시간에 CSV 자동 처리</p>
+              <p class="text-xs text-yellow-600 dark:text-yellow-400 mt-1">⭐ 고우선순위</p>
+            </div>
+          </label>
+          <label class="flex items-start gap-4 p-4 bg-gray-50 dark:bg-gray-900 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 cursor-pointer transition-colors border-2 border-transparent hover:border-blue-400">
+            <input type="checkbox" class="mt-1">
+            <div>
+              <p class="font-semibold">📦 다중 파일 배치</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">폴더의 여러 CSV를 한 번에 처리</p>
+              <p class="text-xs text-yellow-600 dark:text-yellow-400 mt-1">⭐ 고우선순위</p>
+            </div>
+          </label>
+          <label class="flex items-start gap-4 p-4 bg-gray-50 dark:bg-gray-900 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 cursor-pointer transition-colors">
+            <input type="checkbox" class="mt-1">
+            <div>
+              <p class="font-semibold">🧮 조건부 계산</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">IF/SWITCH 같은 고급 계산 단계</p>
+            </div>
+          </label>
+          <label class="flex items-start gap-4 p-4 bg-gray-50 dark:bg-gray-900 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 cursor-pointer transition-colors">
+            <input type="checkbox" class="mt-1">
+            <div>
+              <p class="font-semibold">📊 Excel 직접 지원</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">.xlsx 파일 직접 업로드 지원</p>
+            </div>
+          </label>
+        </div>
+      </section>
+
+      <!-- Section 5: Growth Roadmap -->
+      <section>
+        <h2 class="text-3xl font-bold mb-4 text-blue-600 dark:text-blue-400">5️⃣ 성장 전략</h2>
+        <div class="space-y-4">
+          <div class="bg-gradient-to-r from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 p-6 rounded-lg">
+            <h3 class="font-semibold text-lg mb-2">🎓 교육 컨텐츠</h3>
+            <p class="text-gray-700 dark:text-gray-300">YouTube 튜토리얼 시리즈 (5-10분 영상) → 500+ 조회 예상</p>
+          </div>
+          <div class="bg-gradient-to-r from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20 p-6 rounded-lg">
+            <h3 class="font-semibold text-lg mb-2">🏪 템플릿 마켓플레이스</h3>
+            <p class="text-gray-700 dark:text-gray-300">사용자 공유 레시피 + 평점 시스템 → 30% 사용자 증가</p>
+          </div>
+          <div class="bg-gradient-to-r from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20 p-6 rounded-lg">
+            <h3 class="font-semibold text-lg mb-2">💼 업계별 템플릿 팩</h3>
+            <p class="text-gray-700 dark:text-gray-300">소매·회계·HR 등 산업별 특화 → 전환율 25% 향상</p>
+          </div>
+          <div class="bg-gradient-to-r from-orange-50 to-orange-100 dark:from-orange-900/20 dark:to-orange-800/20 p-6 rounded-lg">
+            <h3 class="font-semibold text-lg mb-2">👥 팀 협업</h3>
+            <p class="text-gray-700 dark:text-gray-300">다중 사용자 편집 + 로그 공유 → 엔터프라이즈 확보</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 6: Monetization -->
+      <section>
+        <h2 class="text-3xl font-bold mb-4 text-blue-600 dark:text-blue-400">6️⃣ 수익화 옵션</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="bg-white dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 p-6 rounded-lg">
+            <h3 class="font-semibold text-lg mb-2">💳 프리미엄 월정액</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">$5-15/월</p>
+            <ul class="text-sm text-gray-700 dark:text-gray-300 space-y-1">
+              <li>✓ 배치 처리</li>
+              <li>✓ 스케줄링</li>
+              <li>✓ 템플릿 100+</li>
+              <li>✓ 우선 지원</li>
+            </ul>
+            <p class="text-xs text-gray-500 dark:text-gray-400 mt-4">예상: 50명 × $10 = $500/월</p>
+          </div>
+          <div class="bg-white dark:bg-gray-800 border-2 border-green-200 dark:border-green-700 p-6 rounded-lg">
+            <h3 class="font-semibold text-lg mb-2">🏢 엔터프라이즈 라이센스</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">$200+/월</p>
+            <ul class="text-sm text-gray-700 dark:text-gray-300 space-y-1">
+              <li>✓ 팀 협업</li>
+              <li>✓ API 액세스</li>
+              <li>✓ SLA 지원</li>
+              <li>✓ 커스텀 통합</li>
+            </ul>
+            <p class="text-xs text-gray-500 dark:text-gray-400 mt-4">예상: 5팀 × $300 = $1,500/월</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <section class="bg-gray-100 dark:bg-gray-800 p-8 rounded-lg text-center mt-12">
+        <h3 class="text-xl font-bold mb-3">🚀 준비가 되셨나요?</h3>
+        <p class="text-gray-600 dark:text-gray-400 mb-6">GitHub에서 프로젝트를 확인하고 첫 번째 CSV를 변환해 보세요!</p>
+        <a href="https://github.com/hongmacho/excel-repeat-autopilot" target="_blank" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition-colors">
+          📌 GitHub 저장소 방문
+        </a>
+        <p class="text-xs text-gray-500 dark:text-gray-400 mt-6">버전 1.0.0 • 생산 준비 완료 • MIT 라이센스</p>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    function toggleTheme() {
+      const isDark = document.documentElement.classList.toggle('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      updateThemeButton();
+    }
+
+    function updateThemeButton() {
+      const isDark = document.documentElement.classList.contains('dark');
+      const lightMode = document.querySelector('.light-mode');
+      const darkMode = document.querySelector('.dark-mode');
+      if (isDark) {
+        lightMode.classList.add('hidden');
+        darkMode.classList.remove('hidden');
+      } else {
+        lightMode.classList.remove('hidden');
+        darkMode.classList.add('hidden');
+      }
+    }
+
+    updateThemeButton();
+  </script>
+</body>
+</html>
