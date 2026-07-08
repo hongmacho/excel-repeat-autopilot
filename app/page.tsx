@@ -1,65 +1,75 @@
-import Image from "next/image";
+'use client'
 
-export default function Home() {
+import Link from 'next/link'
+import { AppLayout } from '@/components/layout/AppLayout'
+
+export default function HomePage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <AppLayout>
+      <div className="space-y-8">
+        {/* Hero Section */}
+        <section className="bg-gradient-to-r from-blue-50 to-blue-100 dark:from-blue-900 dark:to-blue-800 rounded-lg p-8 text-center">
+          <h2 className="text-3xl font-bold mb-4 text-gray-900 dark:text-white">
+            Excel 작업을 자동화하세요
+          </h2>
+          <p className="text-gray-600 dark:text-gray-300 mb-6 max-w-2xl mx-auto">
+            매달 반복되는 엑셀 작업을 드래그앤드롭으로 정의하고 버튼 하나로 실행하세요.
+            비기술자도 쉽게 사용할 수 있습니다.
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
-  );
+          <div className="flex gap-4 justify-center flex-wrap">
+            <Link href="/recipes/new">
+              <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors">
+                새 레시피 만들기
+              </button>
+            </Link>
+            <Link href="/templates">
+              <button className="border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 font-semibold py-3 px-6 rounded-lg transition-colors">
+                템플릿 보기
+              </button>
+            </Link>
+          </div>
+        </section>
+
+        {/* Quick Stats */}
+        <section className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg p-6 text-center">
+            <p className="text-gray-600 dark:text-gray-400 text-sm font-medium mb-2">
+              생성된 레시피
+            </p>
+            <p className="text-2xl font-bold text-gray-900 dark:text-white">0</p>
+          </div>
+          <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg p-6 text-center">
+            <p className="text-gray-600 dark:text-gray-400 text-sm font-medium mb-2">
+              처리한 데이터
+            </p>
+            <p className="text-2xl font-bold text-gray-900 dark:text-white">0행</p>
+          </div>
+          <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg p-6 text-center">
+            <p className="text-gray-600 dark:text-gray-400 text-sm font-medium mb-2">
+              자동화 실행
+            </p>
+            <p className="text-2xl font-bold text-gray-900 dark:text-white">0회</p>
+          </div>
+          <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg p-6 text-center">
+            <p className="text-gray-600 dark:text-gray-400 text-sm font-medium mb-2">
+              절감 시간
+            </p>
+            <p className="text-2xl font-bold text-gray-900 dark:text-white">0시간</p>
+          </div>
+        </section>
+
+        {/* Empty State Message */}
+        <section className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg p-12 text-center">
+          <p className="text-gray-600 dark:text-gray-400 mb-4">
+            아직 만든 레시피가 없습니다.
+          </p>
+          <Link href="/recipes/new">
+            <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded transition-colors">
+              첫 번째 레시피 만들기
+            </button>
+          </Link>
+        </section>
+      </div>
+    </AppLayout>
+  )
 }

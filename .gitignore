@@ -39,3 +39,16 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# database
+*.db
+*.sqlite
+*.sqlite3
+data.db
+
+# environment
+.env.local
+.env.*.local
+
+# omc
+.omc/
