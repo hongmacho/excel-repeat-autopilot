@@ -48,35 +48,7 @@ export type Execution = typeof executions.$inferSelect
 export type NewExecution = typeof executions.$inferInsert
 
 // Step Types
-export type FilterStep = {
-  type: 'filter'
-  column: string
-  operator: '=' | '!=' | '>' | '<' | 'contains'
-  value: string
+export type Step = {
+  type: 'filter' | 'select' | 'copy' | 'calculate' | 'sort' | 'rename' | 'dedup' | 'aggregate'
+  config: Record<string, unknown>
 }
-
-export type SelectStep = {
-  type: 'select'
-  columns: string[]
-}
-
-export type CopyStep = {
-  type: 'copy'
-  from: string
-  to: string
-}
-
-export type CalculateStep = {
-  type: 'calculate'
-  resultColumn: string
-  function: 'sum' | 'avg' | 'count'
-  range: string
-}
-
-export type SortStep = {
-  type: 'sort'
-  column: string
-  order: 'asc' | 'desc'
-}
-
-export type Step = FilterStep | SelectStep | CopyStep | CalculateStep | SortStep

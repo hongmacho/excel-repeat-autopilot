@@ -70,7 +70,7 @@ export default function TemplatesPage() {
   const router = useRouter()
   const [loading, setLoading] = useState<string | null>(null)
 
-  const useTemplate = async (template: Template) => {
+  const handleUseTemplate = async (template: Template) => {
     try {
       setLoading(template.name)
 
@@ -148,7 +148,7 @@ export default function TemplatesPage() {
               </div>
 
               <button
-                onClick={() => useTemplate(template)}
+                onClick={() => handleUseTemplate(template)}
                 disabled={loading === template.name}
                 className="w-full bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 text-white font-semibold py-2 px-4 rounded-lg transition-colors"
               >

@@ -4,7 +4,7 @@ import { AppLayout } from '@/components/layout/AppLayout'
 import { useState } from 'react'
 import Link from 'next/link'
 import type { Step } from '@/lib/db/schema'
-import { Trash2, Plus, ChevronDown } from 'lucide-react'
+import { Trash2, Plus } from 'lucide-react'
 
 type StepType = 'filter' | 'select' | 'copy' | 'calculate' | 'sort' | 'rename' | 'dedup' | 'aggregate'
 
@@ -81,7 +81,7 @@ export default function CreateRecipePage() {
     }
 
     const newStep: Step = {
-      type: newStepType as any,
+      type: newStepType,
       config: stepConfig,
     }
 
