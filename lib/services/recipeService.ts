@@ -41,7 +41,10 @@ export class RecipeService {
 
   async create(data: Omit<NewRecipe, 'id' | 'createdAt' | 'updatedAt'>): Promise<Recipe> {
     validateRecipeName(data.name)
-    validateInputColumns(data.inputColumns || [])
+    const inputCols = typeof data.inputColumns === 'string'
+      ? JSON.parse(data.inputColumns)
+      : (data.inputColumns || [])
+    validateInputColumns(inputCols)
 
     const now = new Date()
     const newRecipe: NewRecipe = {
@@ -73,7 +76,10 @@ export class RecipeService {
       validateRecipeName(data.name)
     }
     if (data.inputColumns) {
-      validateInputColumns(data.inputColumns)
+      const inputCols = typeof data.inputColumns === 'string'
+        ? JSON.parse(data.inputColumns)
+        : data.inputColumns
+      validateInputColumns(inputCols)
     }
 
     const now = new Date()
